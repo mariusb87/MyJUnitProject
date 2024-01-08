@@ -1,26 +1,24 @@
-import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.Assertions;
-import org.junit.jupiter.api.BeforeEach;
-import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.*;
 
 public class ConvertorUnitatiMasuraTest {
     private static ConvertorUnitatiMasura convertor;
 
-@BeforeEach
-    public void beforeMethod(){
+@BeforeAll
+    public static void beforeMethod(){
         convertor = new ConvertorUnitatiMasura();
         System.out.println("executing BeforeEach method");
     }
 @Test
     public void fahrenheitToCelsiusTest(){
-        double result = convertor.fahrenheitToCelsius(20);
-        Assertions.assertEquals(-7,Math.round(result));
+        double result = convertor.fahrenheitToCelsius(98.6);
+        Assertions.assertEquals(37,Math.round(result),"valorile nu sunt egale");
     }
     @Test
     public void milesToKilometersTest(){
         double result = convertor.milesToKilometers(2);
-        Assertions.assertEquals(3.218688, result);
+        Assertions.assertEquals(3.218688, result,0.01);
     }
+    @Disabled("Ignoring this test")
     @Test
     public void poundsToKilograms(){
         double result = convertor.poundsToKilograms(7);

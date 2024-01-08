@@ -41,6 +41,12 @@ public class CalculatorTest {
         double result = calculator.divide(6,3);
         Assertions.assertEquals(result,2);
     }
+    @Test
+    public void moduloTest(){
+        double result = calculator.modulo(9,2);
+        Assertions.assertEquals(1,result);
+    }
+
     @AfterEach
     public void afterEach(){
         System.out.println("After each");

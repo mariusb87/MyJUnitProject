@@ -11,7 +11,10 @@ public class Calculator {
         return x*y;
     }
     public double divide(int x, int y){
-
         return x/y;
+    }
+
+    public int modulo(int x, int y){
+        return x%y;
     }
 }
